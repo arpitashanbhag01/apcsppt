@@ -9,7 +9,14 @@ print(classdict)
 adding = input("")
 while adding != "No":
     student = input("Which student would you like to add a grade for?: ").capitalize()
-    grade = input("Enter their grade: ")
+    grade = int(input("Enter their grade: "))
     classdict[student].append(grade)
     adding = input("Would you like to add another grade (yes/no): ").capitalize()
+print(classdict)
+
+adding = input("")
+while adding != "No":
+    student = input("Which student would you like to calculate the overall grade for?: ").capitalize()
+    for student, value in classdict.items():
+        print(sum(value)/len(value))
 print(classdict)
