@@ -36,6 +36,7 @@ while adding != "No":
         else:
             print("This student is not part of your list.")
     for student, value in classdict.items():
+        #if len(value) = 0 ignore
         overall = (sum(value)/len(value))
         if overall >= 89.5:
             print(overall, "A")
