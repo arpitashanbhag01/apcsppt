@@ -1,30 +1,38 @@
 classdict = {}
 adding = input("")
 while adding != "No":
-    #deal with repeating names
-    studentname = input("Please enter the name of the student: ").strip().capitalize()
+    while True:
+        studentname = input("Please enter the name of the student: ").strip().capitalize()
+        if studentname not in classdict:
+            classdict[studentname] = []
+            break
+        else:
+            print(studentname, "is already in the class list. Please list a different student.")
     while True:
         adding = input("Would you like to add another student to your class (yes/no): ").strip().capitalize()
         if adding in ("Yes", "No"):
             break
         else:
             print("Invalid input. Please enter 'Yes' or 'No'.")
-    classdict[studentname] = []
 print(classdict)
 
 adding = input("")
 while adding != "No":
     while True:
-        student = input("Which student would you like to add a grade for?: ").strip().capitalize()
+        student = input("Which student would you like to add a test score for?: ").strip().capitalize()
         if student in classdict.keys():
             break
         else:
             print("This student is not part of your list.")
             #would you like to add them to your list
-    #check if their input is an integer .isdigit()
-    grade = int(input("Enter their grade: "))
-    classdict[student].append(grade)
-    adding = input("Would you like to add another grade (yes/no): ").strip().capitalize()
+    while True:
+        grade = (input("Enter their test score: "))
+        if grade.isdigit():
+            classdict[student].append(grade)
+            break
+        else:
+            print("Please enter a valid test score.")
+    adding = input("Would you like to add another test score (yes/no): ").strip().capitalize()
 print(classdict)
 
 adding = input("")
