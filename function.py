@@ -1,3 +1,5 @@
+#change vs code to light mode and use codesnap extension
+
 class Student:
     """
     Represents a student with a list of scores and methods to add scores and calculate grades.
